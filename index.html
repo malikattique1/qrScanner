@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cross-Browser QRCode generator for Javascript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+
+    <link rel="icon" href="img/qrlogo.png" type="image/x-icon">
+
+    <title>QR Code Scanner</title>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-brand">
+                <img src="img/qrlogo.png" alt="transaltor" />
+
+                <h3 class="logo-title">QR Code Scanner</h3>
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <img src="img/playstore.png" class="navbar-link" style="width:150px;" />
+
+                </li>
+                <li class="navbar-item last-navbar-item">
+                    <a href="#" type="button"
+                        style="color:#00796B; background-color:white; padding:12px 20px; border-radius:4px;"
+                        class="navbar-link"><b>Help</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- <input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
+    <input id="text2" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
+    <input id="text3" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
+    <input id="image" type="file" accept="image/*" style="width:80%" /><br />
+    <input id="color" type="color" value="#000000" style="width:80%" /><br />
+  
+    <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div> -->
+
+
+    <div class="links">
+        <a class="link" onclick="changeContent('Link 1')">CLIPBOARD</a>
+        <a class="link" onclick="changeContent('Link 2')">WEBSITE</a>
+        <a class="link" onclick="changeContent('Link 3')">CONTACT</a>
+        <a class="link" onclick="changeContent('Link 4')">WIFI</a>
+        <a class="link" onclick="changeContent('Link 5')">LOCATION</a>
+        <a class="link" onclick="changeContent('Link 1')">CLIPBOARD</a>
+        <a class="link" onclick="changeContent('Link 2')">WEBSITE</a>
+        <a class="link" onclick="changeContent('Link 3')">CONTACT</a>
+    </div>
+
+    <div class="container">
+        <div class="left-side">
+            <div class="enterContent" id="enterContent">
+                <img src="img/qrlogo.png" alt="transaltor" />
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="textdiv" class="contentdiv" style="display:none;">
+                <h5>Enter text or paste from clipboard</h5>
+                <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+            </div>
+
+            <div class="enterContent" id="enterColor">
+                <img src="img/qrlogo.png" alt="transaltor" />
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+
+            <div id="colordiv" class="contentdiv" style="display:none;">
+                <h5>Enter color</h5>
+                <input id="color" type="color" value="#000000"><br />
+            </div>
+
+
+            <div class="enterContent" id="enterImage">
+                <img src="img/qrlogo.png" alt="transaltor" />
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv" class="contentdiv" style="display:none;">
+                <h5>Enter Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+
+
+            <!-- <div class="enterContent" id="enterContent" onclick="changeContent('Link 1')">
+                <img src="img/qrlogo.png" alt="transaltor" />
+                <h5>Add Logo Image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <input id="text3" type="text" value="http://jindo.dev.naver.com/collie" style="display:none;"><br />
+
+
+            <div class="enterContent" id="enterContent" onclick="changeContent('Link 1')">
+                <img src="img/qrlogo.png" alt="transaltor" />
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <input id="color" type="color" value="#000000" style="display:none;"><br /> -->
+        </div>
+        <div class="right-side">
+            <div id="qrcode" class="qrcode"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- footer content section starts  -->
+    <section class="footerContent" id="footerContent">
+        <div class="footerContentBox" id="footerContentBox">
+            <div class="infoLinkBox">
+                <img src='img/qrlogo.png' alt="QR Code Scanner" />
+                <h3>QR Code Scanner</h3>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Resources</span></p>
+                <p><span>Data Security</span></p>
+                <p><span>Privacy Policy</span></p>
+                <p><span>Terms & Conditions</span></p>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Resources</span></p>
+                <p><span>Data Security</span></p>
+                <p><span>Privacy Policy</span></p>
+                <p><span>Terms & Conditions</span></p>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Resources</span></p>
+                <p><span>Data Security</span></p>
+                <p><span>Privacy Policy</span></p>
+                <p><span>Terms & Conditions</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="underfooterContent" id="underfooterContent" style="border-top:1px solid #999999;">
+        <div class="underfooterContentBox" id="underfooterContentBox" style="">
+            <div class="infoLinkBox">
+                <p><span>About us</span></p>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Contact us</span></p>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Feedback</span></p>
+            </div>
+            <div class="infoLinkBox">
+                <p><span>Legal</span></p>
+            </div>
+            <div class="infoLinkBox right">
+                <p><span>@QR Code Scanner 2023</span></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+
+</html>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+
+<!-- <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.min.js"></script> -->
+<!-- <script src="js/ocr.js"></script>
+<script src="js/countries.js"></script>
+<script src="js/phrasebook.js"></script> -->
+<script src="js/script.js"></script>
