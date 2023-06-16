@@ -1,39 +1,39 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-      width: 100,
-      height: 100
+        width: 100,
+        height: 100
     });
 
     function makeCode() {
-      var elText = document.getElementById("text");
-    //   var elText2 = document.getElementById("text2");
-    //   var elText3 = document.getElementById("text3");
-      var elImage = document.getElementById("image");
-      var elColor = document.getElementById("color");
+        var elText = document.getElementById("text");
+        //   var elText2 = document.getElementById("text2");
+        //   var elText3 = document.getElementById("text3");
+        var elImage = document.getElementById("image");
+        var elColor = document.getElementById("color");
 
-    //   var combinedValue = elText.value + "\n" + elText2.value + "\n" + elText3.value;
-      var combinedValue = elText.value;
+        //   var combinedValue = elText.value + "\n" + elText2.value + "\n" + elText3.value;
+        var combinedValue = elText.value;
 
 
-      // QR code options
-      var options = {
-        text: combinedValue,
-        width: 100,
-        height: 100,
-        colorDark: elColor.value,
-        image: elImage.files[0]
-      };
-
-      if (options.image) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          options.image = e.target.result;
-          qrcode.makeCode(JSON.stringify(options));
+        // QR code options
+        var options = {
+            text: combinedValue,
+            width: 100,
+            height: 100,
+            colorDark: elColor.value,
+            image: elImage.files[0]
         };
-        reader.readAsDataURL(options.image);
-      } else {
-        qrcode.makeCode(JSON.stringify(options));
-      }
+
+        if (options.image) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                options.image = e.target.result;
+                qrcode.makeCode(JSON.stringify(options));
+            };
+            reader.readAsDataURL(options.image);
+        } else {
+            qrcode.makeCode(JSON.stringify(options));
+        }
     }
 
     makeCode();
@@ -41,10 +41,10 @@ $(document).ready(function() {
     // $("#text, #text2, #text3, #image, #color").on("input", function() {
     //   makeCode();
     // });
-    $("#text, #image, #color").on("input", function() {
+    $("#text, #image, #color").on("input", function () {
         makeCode();
-      });
-  });
+    });
+});
 
 
 
@@ -453,14 +453,14 @@ $(document).ready(function() {
 // //                 });
 
 
-           
+
 
 
 
 
 // //             }
 // //             this.classList.toggle("starred");
-            
+
 // //         });
 
 
@@ -600,7 +600,7 @@ $(document).ready(function() {
 
 
 
-    
+
 
 //     });
 // }
@@ -721,7 +721,7 @@ $(document).ready(function () {
 
 
     $("#enterContent").click(function () {
-        $("#textdiv").toggle("slow");
+        $("#textDiv").toggle("slow");
     });
 
     $("#enterColor").click(function () {
@@ -733,17 +733,61 @@ $(document).ready(function () {
     });
 
 
+    $('.link').on('click', function () {
+        var content = $(this).text(); // Get the content of the clicked link
+        console.log(content)
+        var convertedText = content.toLowerCase(); // Convert to lowercase
+        var targetDiv = $('#' + convertedText); // Assuming the div has an ID equal to the link's content
+        $('.left-side').not(targetDiv).hide(); // Hide all other divs except the target div
+        targetDiv.show(); // Show the target div
+    });
+
+
+
+    $("#enterWebsite").click(function () {
+        $("#websiteDiv").toggle("slow");
+    });
+
+    $("#enterColor2").click(function () {
+        $("#colordiv2").toggle("slow");
+    });
+
+    $("#enterImage2").click(function () {
+        $("#imagediv2").toggle("slow");
+    });
+
+
+
+
+    $("#enterContact").click(function () {
+        $("#contactDiv").toggle("slow");
+    });
+
+    $("#enterColor3").click(function () {
+        $("#colordiv3").toggle("slow");
+    });
+
+    $("#enterImage3").click(function () {
+        $("#imagediv3").toggle("slow");
+    });
+    $("#enterImage33").click(function () {
+        $("#imagediv33").toggle("slow");
+    });
+
+
+
+
 
     $(".select-with-search").select2();
-    $(".select-with-search").on("select2:open", function() {
+    $(".select-with-search").on("select2:open", function () {
         $(".select2-search__field").attr("placeholder", "Search Languages");
-      });
-      
-      
+    });
+
+
     $(".select-with-search2").select2();
-    $(".select-with-search2").on("select2:open", function() {
+    $(".select-with-search2").on("select2:open", function () {
         $(".select2-search__field").attr("placeholder", "Search Languages");
-      });
+    });
     var firstSelect = $("#firstselect");
     console.log("firstSelect", firstSelect)
     firstSelect.on("select2:open", function () {

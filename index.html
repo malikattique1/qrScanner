@@ -43,78 +43,235 @@
     </nav>
 
 
-    <!-- <input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
-    <input id="text2" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
-    <input id="text3" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
-    <input id="image" type="file" accept="image/*" style="width:80%" /><br />
-    <input id="color" type="color" value="#000000" style="width:80%" /><br />
-  
-    <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div> -->
 
 
     <div class="links">
-        <a class="link" onclick="changeContent('Link 1')">CLIPBOARD</a>
-        <a class="link" onclick="changeContent('Link 2')">WEBSITE</a>
-        <a class="link" onclick="changeContent('Link 3')">CONTACT</a>
-        <a class="link" onclick="changeContent('Link 4')">WIFI</a>
-        <a class="link" onclick="changeContent('Link 5')">LOCATION</a>
-        <a class="link" onclick="changeContent('Link 1')">CLIPBOARD</a>
-        <a class="link" onclick="changeContent('Link 2')">WEBSITE</a>
-        <a class="link" onclick="changeContent('Link 3')">CONTACT</a>
+        <a class="link">CLIPBOARD</a>
+        <a class="link">WEBSITE</a>
+        <a class="link">CONTACT</a>
+        <a class="link">WIFI</a>
+        <a class="link">LOCATION</a>
+        <a class="link">CLIPBOARD</a>
+        <a class="link">WEBSITE</a>
+        <a class="link">CONTACT</a>
     </div>
 
+    <div class="navbar" style="display:none;">
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-btn">
+            <span class="hamburger"></span>
+        </label>
+        <ul class="menu">
+            <li><a class="link">CLIPBOARD</a></li>
+            <li><a class="link">WEBSITE</a></li>
+            <li><a class="link">CONTACT</a></li>
+            <li><a class="link">WIFI</a></li>
+            <li><a class="link">LOCATION</a></li>
+            <li><a class="link">CLIPBOARD</a></li>
+            <li><a class="link">WEBSITE</a></li>
+            <li><a class="link">CONTACT</a></li>
+        </ul>
+    </div>
+
+
+
+
     <div class="container">
-        <div class="left-side">
+        <div class="left-side" id="clipboard"  style="display:block;">
             <div class="enterContent" id="enterContent">
-                <img src="img/qrlogo.png" alt="transaltor" />
+                <span><img id="from" src="img/copy.png"></img></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
-            <div id="textdiv" class="contentdiv" style="display:none;">
+            <div id="textDiv" class="contentDiv" style="display:none;">
                 <h5>Enter text or paste from clipboard</h5>
+                <br>
                 <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
             </div>
-
             <div class="enterContent" id="enterColor">
-                <img src="img/qrlogo.png" alt="transaltor" />
+                <span><img id="from" src="img/brush.png"></img></span>
                 <h5>Set Color</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
-
-            <div id="colordiv" class="contentdiv" style="display:none;">
+            <div id="colordiv" class="contentDiv" style="display:none;">
                 <h5>Enter color</h5>
                 <input id="color" type="color" value="#000000"><br />
             </div>
-
-
             <div class="enterContent" id="enterImage">
-                <img src="img/qrlogo.png" alt="transaltor" />
+                <span><img id="from" src="img/img.png"></img></span>
                 <h5>Add Logo image</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
-            <div id="imagediv" class="contentdiv" style="display:none;">
+            <div id="imagediv" class="contentDiv" style="display:none;">
+                <h5>Enter Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <div class="enterContent" id="enterImage">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv11" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="left-side" id="website" style="display:none;">
+            <div class="enterContent" id="enterWebsite">
+                <span><img id="from" src="img/copy.png"></img></span>
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="websiteDiv" class="websiteDiv" style="display:none;">
+                <h5>Enter Url</h5>
+                <br>
+                <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+            </div>
+            <div class="enterContent" id="enterColor2">
+                <span><img id="from" src="img/brush.png"></img></span>
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="colordiv2" class="contentDiv" style="display:none;">
+                <h5>Enter color</h5>
+                <input id="color" type="color" value="#000000"><br />
+            </div>
+            <div class="enterContent" id="enterImage2">
+                <span><img id="from" src="img/img.png"></img></span>
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv2" class="contentDiv" style="display:none;">
+                <h5>Enter Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <div class="enterContent" id="enterImage2">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv22" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="left-side" id="contact" style="display:none;">
+            <div class="enterContent" id="enterContact">
+                <span><img id="from" src="img/copy.png"></img></span>
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="contactDiv" class="contactDiv" style="display:none;">
+                <div>
+                    <h5>First name</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>last name</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>phone no</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+            </div>
+            <div class="enterContent" id="enterColor3">
+                <span><img id="from" src="img/brush.png"></img></span>
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="colordiv3" class="contentDiv" style="display:none;">
+                <h5>Enter color</h5>
+                <input id="color" type="color" value="#000000"><br />
+            </div>
+            <div class="enterContent" id="enterImage3">
+                <span><img id="from" src="img/img.png"></img></span>
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv3" class="contentDiv" style="display:none;">
                 <h5>Enter Image</h5>
                 <input id="image" type="file" accept="image/*"><br />
             </div>
 
-
-            <!-- <div class="enterContent" id="enterContent" onclick="changeContent('Link 1')">
-                <img src="img/qrlogo.png" alt="transaltor" />
-                <h5>Add Logo Image</h5>
+            <div class="enterContent" id="enterImage33">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
-            <input id="text3" type="text" value="http://jindo.dev.naver.com/collie" style="display:none;"><br />
-
-
-            <div class="enterContent" id="enterContent" onclick="changeContent('Link 1')">
-                <img src="img/qrlogo.png" alt="transaltor" />
-                <h5>Enter Content</h5>
-                <i id="from" class="fas fa-plus"></i>
+            <div id="imagediv33" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
             </div>
-            <input id="color" type="color" value="#000000" style="display:none;"><br /> -->
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
         </div>
+
+
+
+
         <div class="right-side">
             <div id="qrcode" class="qrcode"></div>
+            <input type="range" class="range" min="1" max="100" value="50" step="1">
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    Create QR Code
+                </button>
+                <button type="submit" id="savedBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
+                    Download PNG
+                </button>
+            </div>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    .SVG
+                </button>
+                <button type="submit" id="savedBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
+                    .PDGF
+                </button>
+                <button type="submit" id="savedBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
+                    .EPS
+                </button><br>
+                <br>
+                *no support for gradient colors
+
+            </div>
         </div>
     </div>
 
@@ -150,22 +307,8 @@
         </div>
     </section>
     <section class="underfooterContent" id="underfooterContent" style="border-top:1px solid #999999;">
-        <div class="underfooterContentBox" id="underfooterContentBox" style="">
-            <div class="infoLinkBox">
-                <p><span>About us</span></p>
-            </div>
-            <div class="infoLinkBox">
-                <p><span>Contact us</span></p>
-            </div>
-            <div class="infoLinkBox">
-                <p><span>Feedback</span></p>
-            </div>
-            <div class="infoLinkBox">
-                <p><span>Legal</span></p>
-            </div>
-            <div class="infoLinkBox right">
-                <p><span>@QR Code Scanner 2023</span></p>
-            </div>
+        <div class="underfooterContentBox" id="underfooterContentBox">
+            <p><span>@2023 Copyright:QR Code Scanner</span></p>
         </div>
     </section>
 
@@ -179,9 +322,4 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
-
-<!-- <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.min.js"></script> -->
-<!-- <script src="js/ocr.js"></script>
-<script src="js/countries.js"></script>
-<script src="js/phrasebook.js"></script> -->
 <script src="js/script.js"></script>

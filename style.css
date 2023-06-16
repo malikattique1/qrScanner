@@ -86,7 +86,7 @@ body {
     justify-content: center;
     width: 100%;
     padding: 30px;
-    background-color:#00796B;
+    background-color: #00796B;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
     margin-bottom: 50px;
 
@@ -96,20 +96,33 @@ body {
     width: 30%;
     padding: 20px;
     background-color: #F4F4F4;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
 }
 
 .right-side {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 19%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: center; */
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 }
 
 .qrcode {
+
     width: 200px;
     height: 200px;
+    align-self: center;
+}
+
+.range {
+    align-self: center;
 }
 
 .qrcode img {
@@ -122,7 +135,7 @@ input {
 }
 
 
-.links {
+/* .links {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -133,7 +146,74 @@ input {
     color: #99C9C4;
     text-decoration: underline;
     cursor: pointer;
+} */
+
+/* Styles for desktop view */
+.links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
 }
+
+.links .link {
+    /* margin-right: 10px; */
+
+    margin: 20px 30px;
+    color: #99C9C4;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styles for mobile view */
+/* @media (max-width: 768px) {
+    .menu-btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .menu-btn .hamburger,
+    .menu-btn .hamburger:before,
+    .menu-btn .hamburger:after {
+        content: '';
+        display: block;
+        background-color: #000;
+        height: 2px;
+        width: 25px;
+        border-radius: 2px;
+        transition: background-color 0.3s ease;
+    }
+
+    .menu-btn .hamburger:before {
+        margin-top: 6px;
+    }
+
+    .menu-btn .hamburger:after {
+        margin-top: 6px;
+    }
+
+    .menu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #menu-toggle:checked~.menu {
+        display: block;
+    }
+} */
+
+
+
+
+
+
 
 
 
@@ -143,24 +223,36 @@ input {
     background-color: white;
     height: 50px;
     width: 100%;
-    padding: 0 10px;
     margin-bottom: 20px;
     /* Added padding to give space around the content */
 }
 
-.enterContent img {
+.enterContent span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
+    height: 50px;
+    background-color: #DBE4E1;
+    border-radius: 5px;
 }
+
+span img {
+    width: 20px;
+    height: 20px;
+
+}
+
 
 .enterContent h5 {
     flex-grow: 1;
     /* Allow the heading to grow and occupy remaining space */
     margin: 0 10px;
-    /* Adjust margin values as needed */
 }
 
 .enterContent i {
     flex-shrink: 0;
+    padding-right: 15px;
     /* Prevent the icon from shrinking */
 }
 
@@ -171,10 +263,49 @@ input[type=password] {
     height: 36px;
 }
 
-.contentdiv {
+.contentDiv {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+
+
+.divWithButtons {
+    /* padding: 10px 0; */
+    padding-top: 5px;
+    padding-bottom: 20px;
+
+
+    text-align: left;
+    padding-left: 10px;
+
+
+}
+
+.submit-btn {
+    height: 35px;
+    padding: 0 15px;
+    background-color: #DBE4E1;
+    border: 0px solid #DBE4E1;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -934,20 +1065,12 @@ li,
 
 #underfooterContentBox {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 70%;
     margin: 0 auto;
     background-color: #F4F4F4;
     padding: 20px;
-}
-
-.infoLinkBox.right {
-    margin-left: auto;
-}
-
-.infoLinkBox:not(.right) {
-    margin-right: 15px;
 }
 
 
