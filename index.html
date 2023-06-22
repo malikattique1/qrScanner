@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="qrcode.min.js"></script>
+    <!-- <script type="text/javascript" src="qrcode.min.js"></script> -->
+    <script type="text/javascript" src="qrious.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/qrious.min.js"></script> -->
 
     <link rel="icon" href="img/qrlogo.png" type="image/x-icon">
 
@@ -81,7 +84,6 @@
 
 
 
-
     <div class="container">
         <div class="left-side" id="clipboard" style="display:block;">
             <div class="enterContent" id="enterContent">
@@ -92,7 +94,7 @@
             <div id="textDiv" class="contentDiv" style="display:none;">
                 <h5>Enter text or paste from clipboard</h5>
                 <br>
-                <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                <input id="text" type="text" value=""><br />
             </div>
             <div class="enterContent" id="enterColor">
                 <span><img id="from" src="img/brush.png"></img></span>
@@ -111,18 +113,18 @@
                     <label for="customEyeColor">
                         <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
                     </label>
-                    <input id="singlecolor" class="singlecolor" type="color" value="#000000">
-                    <input id="gradientcolor" class="gradientcolor" type="color" value="#000000">
+                    <input id="color1" class="singlecolor" type="color" value="">
+                    <input id="gradientcolor" class="gradientcolor" type="color" value="">
 
                 </div>
                 <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
                 <div class="colorDiv">
-                    <input id="eyecolor" class="eyecolor" type="color" value="#000000">
-                    <!-- <input id="eyecolor" type="color" value="#000000"> -->
+                    <input id="eyecolor" class="eyecolor" type="color" value="">
+                    <!-- <input id="eyecolor" type="color" value=""> -->
                 </div>
                 <h5>Background Color</h5>
                 <div class="colorDiv">
-                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="#000000">
+                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="">
                 </div>
 
             </div>
@@ -133,9 +135,9 @@
             </div>
             <div id="imagediv" class="contentDiv" style="display:none;">
                 <h5>Upload Image</h5>
-                <input id="image" type="file" accept="image/*"><br />
+                <input id="image1" type="file" accept="image/*"><br />
             </div>
-            <div class="enterContent" id="enterImage">
+            <div class="enterContent" id="enterImage11">
                 <span><img id="from" src="img/design.png"></img></span>
                 <h5>Custom Design</h5>
                 <i id="from" class="fas fa-plus"></i>
@@ -167,7 +169,7 @@
             <div id="websiteDiv" class="websiteDiv" style="display:none;">
                 <h5>Enter Url</h5>
                 <br>
-                <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                <input id="url" type="url" value=""><br />
             </div>
             <div class="enterContent" id="enterColor2">
                 <span><img id="from" src="img/brush.png"></img></span>
@@ -187,18 +189,18 @@
                     <label for="customEyeColor">
                         <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
                     </label>
-                    <input id="color" class="singlecolor" type="color" value="#000000">
-                    <input id="gradientcolor" class="gradientcolor" type="color" value="#000000">
+                    <input id="color2" class="singlecolor" type="color" value="">
+                    <input id="gradientcolor" class="gradientcolor" type="color" value="">
 
                 </div>
                 <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
                 <div class="colorDiv">
-                    <input id="eyecolor" class="eyecolor" type="color" value="#000000">
+                    <input id="eyecolor" class="eyecolor" type="color" value="">
                     <!-- <input id="eyecolor" type="color" value="#000000"> -->
                 </div>
                 <h5>Background Color</h5>
                 <div class="colorDiv">
-                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="#000000">
+                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="">
                 </div>
             </div>
             <div class="enterContent" id="enterImage2">
@@ -210,7 +212,7 @@
                 <h5>Upload Image</h5>
                 <input id="image" type="file" accept="image/*"><br />
             </div>
-            <div class="enterContent" id="enterImage2">
+            <div class="enterContent" id="enterImage22">
                 <span><img id="from" src="img/design.png"></img></span>
                 <h5>Custom Design</h5>
                 <i id="from" class="fas fa-plus"></i>
@@ -352,8 +354,298 @@
 
 
 
+
+        <div class="left-side" id="wifi" style="display:none;">
+            <div class="enterContent" id="enterWifi">
+                <span><img id="from" src="img/copy.png"></img></span>
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="wifiDiv" class="contactDiv" style="display:none;">
+                <div>
+                    <h5>Network Name</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Encryption</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+
+            </div>
+            <div class="enterContent" id="enterColor4">
+                <span><img id="from" src="img/brush.png"></img></span>
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="colordiv4" class="contentDiv" style="display:none;">
+
+                <h5>Foreground Color</h5>
+                <div class="colorDiv">
+                    <label for="singleColor">
+                        <input id="singleColor" class="singleColor" type="radio" name="colorType4"> Single color
+                    </label>
+                    <label for="gradientcolor">
+                        <input id="gradientColor" class="gradientColor" type="radio" name="colorType4"> Gradient
+                    </label>
+                    <label for="customEyeColor">
+                        <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
+                    </label>
+                    <input id="color" class="singlecolor" type="color" value="#000000">
+                    <input id="gradientcolor" class="gradientcolor" type="color" value="#000000">
+
+                </div>
+                <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
+                <div class="colorDiv">
+                    <input id="eyecolor" class="eyecolor" type="color" value="#000000">
+                    <!-- <input id="eyecolor" type="color" value="#000000"> -->
+                </div>
+                <h5>Background Color</h5>
+                <div class="colorDiv">
+                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="#000000">
+                </div>
+            </div>
+            <div class="enterContent" id="enterImage4">
+                <span><img id="from" src="img/img.png"></img></span>
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv4" class="contentDiv" style="display:none;">
+                <h5>Upload Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+
+            <div class="enterContent" id="enterImage44">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv44" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="left-side" id="location" style="display:none;">
+            <div class="enterContent" id="enterLocation">
+                <span><img id="from" src="img/copy.png"></img></span>
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="locationDiv" class="contactDiv" style="display:none;">
+                <div>
+                    <h5>Latitude</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Longitude</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>MapDown</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                
+            </div>
+            <div class="enterContent" id="enterColor5">
+                <span><img id="from" src="img/brush.png"></img></span>
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="colordiv5" class="contentDiv" style="display:none;">
+
+                <h5>Foreground Color</h5>
+                <div class="colorDiv">
+                    <label for="singleColor">
+                        <input id="singleColor" class="singleColor" type="radio" name="colorType5"> Single color
+                    </label>
+                    <label for="gradientcolor">
+                        <input id="gradientColor" class="gradientColor" type="radio" name="colorType5"> Gradient
+                    </label>
+                    <label for="customEyeColor">
+                        <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
+                    </label>
+                    <input id="color" class="singlecolor" type="color" value="#000000">
+                    <input id="gradientcolor" class="gradientcolor" type="color" value="#000000">
+
+                </div>
+                <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
+                <div class="colorDiv">
+                    <input id="eyecolor" class="eyecolor" type="color" value="#000000">
+                    <!-- <input id="eyecolor" type="color" value="#000000"> -->
+                </div>
+                <h5>Background Color</h5>
+                <div class="colorDiv">
+                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="#000000">
+                </div>
+            </div>
+            <div class="enterContent" id="enterImage5">
+                <span><img id="from" src="img/img.png"></img></span>
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv5" class="contentDiv" style="display:none;">
+                <h5>Upload Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+
+            <div class="enterContent" id="enterImage55">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv55" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class="left-side" id="calendar" style="display:none;">
+            <div class="enterContent" id="enterCalendar">
+                <span><img id="from" src="img/copy.png"></img></span>
+                <h5>Enter Content</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="calendarDiv" class="contactDiv" style="display:none;">
+                <h5>Event Title</h5>
+                <br>
+                <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                <div>
+                    <h5>Start Date</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Start Time</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Event Location</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>End Date</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>End Time</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                <div>
+                    <h5>Description</h5>
+                    <br>
+                    <input id="text" type="text" value="http://jindo.dev.naver.com/collie"><br />
+                </div>
+                
+            </div>
+            <div class="enterContent" id="enterColor6">
+                <span><img id="from" src="img/brush.png"></img></span>
+                <h5>Set Color</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="colordiv6" class="contentDiv" style="display:none;">
+
+                <h5>Foreground Color</h5>
+                <div class="colorDiv">
+                    <label for="singleColor">
+                        <input id="singleColor" class="singleColor" type="radio" name="colorType6"> Single color
+                    </label>
+                    <label for="gradientcolor">
+                        <input id="gradientColor" class="gradientColor" type="radio" name="colorType6"> Gradient
+                    </label>
+                    <label for="customEyeColor">
+                        <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
+                    </label>
+                    <input id="color" class="singlecolor" type="color" value="#000000">
+                    <input id="gradientcolor" class="gradientcolor" type="color" value="#000000">
+
+                </div>
+                <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
+                <div class="colorDiv">
+                    <input id="eyecolor" class="eyecolor" type="color" value="#000000">
+                    <!-- <input id="eyecolor" type="color" value="#000000"> -->
+                </div>
+                <h5>Background Color</h5>
+                <div class="colorDiv">
+                    <input id="backgroundcolor" class="backgroundcolor" type="color" value="#000000">
+                </div>
+            </div>
+            <div class="enterContent" id="enterImage6">
+                <span><img id="from" src="img/img.png"></img></span>
+                <h5>Add Logo image</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv6" class="contentDiv" style="display:none;">
+                <h5>Upload Image</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+
+            <div class="enterContent" id="enterImage66">
+                <span><img id="from" src="img/design.png"></img></span>
+                <h5>Custom Design</h5>
+                <i id="from" class="fas fa-plus"></i>
+            </div>
+            <div id="imagediv66" class="contentDiv" style="display:none;">
+                <h5>Enter Design</h5>
+                <input id="image" type="file" accept="image/*"><br />
+            </div>
+            <br>
+            <br>
+            <div class="divWithButtons">
+                <button type="submit" id="historyBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                    QR Code Templates
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
         <div class="right-side">
             <div id="qrcode" class="qrcode"></div>
+            <!-- <canvas id="qrcode" class="qrcode"></canvas> -->
             <input type="range" class="range" min="1" max="100" value="50" step="1">
             <div class="range-labels">
                 <span class="low-quality">Low Quality</span>
