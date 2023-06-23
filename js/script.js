@@ -4,50 +4,80 @@
 
 
 $(document).ready(function () {
-    // var qrcode = new QRCode(document.getElementById("qrcode"), {
-    //     width: 100,
-    //     height: 100
-    // });
-
-    // function makeCode() {
-    //     var elText = document.getElementById("text");
-    //     //   var elText2 = document.getElementById("text2");
-    //     //   var elText3 = document.getElementById("text3");
-    //     var elImage = document.getElementById("image");
-    //     var elColor = document.getElementById("color");
-
-    //     //   var combinedValue = elText.value + "\n" + elText2.value + "\n" + elText3.value;
-    //     var combinedValue = elText.value;
+   
+    // var qrCodeElement = document.getElementById("qrcode");
+    // generateQRCode();
 
 
-    //     // QR code options
-    //     var options = {
-    //         text: combinedValue,
-    //         width: 100,
-    //         height: 100,
-    //         colorDark: elColor.value,
-    //         image: elImage.files[0]
-    //     };
+    // function generateQRCode() {
+    //     //   var text = document.getElementById("text").value || document.getElementById("url").value;
+    //     //   var url = document.getElementById("url").value;
 
-    //     if (options.image) {
-    //         var reader = new FileReader();
-    //         reader.onload = function (e) {
-    //             options.image = e.target.result;
-    //             qrcode.makeCode(JSON.stringify(options));
-    //         };
-    //         reader.readAsDataURL(options.image);
-    //     } else {
-    //         qrcode.makeCode(JSON.stringify(options));
+
+    //     var textInput = document.getElementById("text");
+    //     var urlInput = document.getElementById("url");
+    //     var text = textInput.value || urlInput.value;
+
+
+    //     var color1 = document.getElementById("color1");
+    //     var color2 = document.getElementById("color2");
+    //     var color3 = document.getElementById("color3");
+    //     // var color4 = document.getElementById("color4");
+    //     // var color = color2.value || color1.value ;
+    //     // var color = color1.value.trim() !== "#000000" ? color1.value : color2.value;
+    //     if (color1.value.trim() !== "#000000") {
+    //         color = color1.value;
+    //       } else if (color2.value.trim() !== "#000000") {
+    //         color = color2.value;
+    //       } else if (color3.value.trim() !== "#000000") {
+    //         color = color3.value;
+    //       }
+    //        else {
+    //         color = "#000000";
+    //       }
+
+    //     var backgroundcolor1 = document.getElementById("backgroundcolor1");
+    //     var backgroundcolor2 = document.getElementById("backgroundcolor2");
+    //     var backgroundcolor3 = document.getElementById("backgroundcolor3");
+    //     if (backgroundcolor1.value.trim() !== "#000000") {
+    //         backgroundcolor = backgroundcolor1.value;
+    //       } else if (backgroundcolor2.value.trim() !== "#000000") {
+    //         backgroundcolor = backgroundcolor2.value;
+    //       } else if (backgroundcolor3.value.trim() !== "#000000") {
+    //         backgroundcolor = backgroundcolor3.value;
+    //       }
+    //       else {
+    //         backgroundcolor = "#ffffff";
+    //       }
+
+    //     var logoImageInput = document.getElementById("image1");
+
+    //     var qrCode = new QRious({
+    //         value: text,
+    //         size: 200,
+    //         foreground: color,
+    //         background: backgroundcolor
+    //     });
+
+    //     qrCodeElement.innerHTML = ''; // Clear existing content
+
+    //     var qrCodeImage = document.createElement("img");
+    //     qrCodeImage.src = qrCode.toDataURL();
+    //     qrCodeImage.className = "qrCode";
+    //     qrCodeElement.appendChild(qrCodeImage);
+
+    //     if (logoImageInput.files && logoImageInput.files[0]) {
+    //         var logoImage = document.createElement("img");
+    //         logoImage.src = URL.createObjectURL(logoImageInput.files[0]);
+    //         logoImage.className = "logo";
+    //         logoImage.style.width = "20px";
+    //         logoImage.style.height = "20px";
+    //         qrCodeElement.appendChild(logoImage);
     //     }
     // }
 
-    // makeCode();
-
-    // // $("#text, #text2, #text3, #image, #color").on("input", function() {
-    // //   makeCode();
-    // // });
-    // $("#text, #image, #color").on("input", function () {
-    //     makeCode();
+    // $("#createBtn").on("click", function () {
+    //     generateQRCode();
     // });
 
 
@@ -55,92 +85,158 @@ $(document).ready(function () {
 
 
 
-    // var qrCodeElement = document.getElementById("qrcode");
-
-    // function generateQRCode() {
-    //   var text = document.getElementById("text").value;
-    //   var color = document.getElementById("color").value;
-
-    //   var qrCode = new QRious({
-    //     value: text,
-    //     size: 200,
-    //     foreground: color,
-    //     background: "#ffffff"
-    //   });
-
-    //   qrCodeElement.innerHTML = ''; // Clear existing content
-
-    //   var qrCodeImage = document.createElement("img");
-    //   qrCodeImage.src = qrCode.toDataURL();
-    //   qrCodeImage.className = "qrCode";
-    //   qrCodeElement.appendChild(qrCodeImage);
-    // }
-
-    // $("#createBtn").on("click", function() {
-    //   generateQRCode();
-    // });
 
 
 
+    var options = {
+        text: 'Sample Text',
+        width: 200,
+        height: 200,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H,
+        logo: null,
+        logoWidth: 0,
+        logoHeight: 0,
+        logoBackgroundColor: '#ffffff',
+        eyeColorDark: '#0000ff',
+        eyeColorLight: '#ff0000',
+      };
+  
+      var qrcode = new QRCode('qrcode', options); // Create the QR code immediately
+  
+      document.addEventListener('DOMContentLoaded', function() {
+        qrcode.clear(); // Clear the existing QR code
+        qrcode.makeCode(options.text); // Generate the QR code with the default text
+      });
 
 
-    var qrCodeElement = document.getElementById("qrcode");
-    generateQRCode();
 
 
-    function generateQRCode() {
-        //   var text = document.getElementById("text").value || document.getElementById("url").value;
-        //   var url = document.getElementById("url").value;
 
 
-        var textInput = document.getElementById("text");
-        var urlInput = document.getElementById("url");
-        var text = textInput.value || urlInput.value;
-
-
-        // var color1 = document.getElementById("color1");
-        var color2 = document.getElementById("color2");
-        var color = color1.value || color2.value;
-        console.log("color",color)
-        console.log("color1",color1)
-        console.log("color2",color2)
-
-        // var color = document.getElementById("color").value;
-
-
-        var logoImageInput = document.getElementById("image1");
-
-        var qrCode = new QRious({
-            value: text,
-            size: 200,
-            foreground: color,
-            background: "#ffffff"
-        });
-
-        qrCodeElement.innerHTML = ''; // Clear existing content
-
-        var qrCodeImage = document.createElement("img");
-        qrCodeImage.src = qrCode.toDataURL();
-        qrCodeImage.className = "qrCode";
-        qrCodeElement.appendChild(qrCodeImage);
-
-        if (logoImageInput.files && logoImageInput.files[0]) {
-            var logoImage = document.createElement("img");
-            logoImage.src = URL.createObjectURL(logoImageInput.files[0]);
-            logoImage.className = "logo";
-            logoImage.style.width = "20px";
-            logoImage.style.height = "20px";
-            qrCodeElement.appendChild(logoImage);
+    var options = {
+        text: 'Sample Text',
+        width: 200,
+        height: 200,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H,
+        logo: null,
+        logoWidth: 50,
+        logoHeight: 50,
+        logoBackgroundColor: '#ffffff',
+        eyeColorDark: '#0000ff',
+        eyeColorLight: '#ff0000',
+      };
+      var qrcode = null; // Keep track of the current QR code
+      
+      function generateQRCode() {
+        
+        if (qrcode) {
+          qrcode.clear(); // Clear the existing QR code
         }
-    }
+      
+        var textInput = document.getElementById('text');
+        var urlInput = document.getElementById('url');
+        var text = textInput.value || urlInput.value;
+      
+        options.text = text;
+      
+        var color1 = document.getElementById('color1');
+        var color2 = document.getElementById('color2');
+        var color3 = document.getElementById('color3');
+      
+        if (color1.value.trim() !== '#000000') {
+          options.colorDark = color1.value;
+        } else if (color2.value.trim() !== '#000000') {
+          options.colorDark = color2.value;
+        } else if (color3.value.trim() !== '#000000') {
+          options.colorDark = color3.value;
+        } else {
+          options.colorDark = '#000000';
+        }
+      
+        var backgroundcolor1 = document.getElementById('backgroundcolor1');
+        var backgroundcolor2 = document.getElementById('backgroundcolor2');
+        var backgroundcolor3 = document.getElementById('backgroundcolor3');
+      
+        if (backgroundcolor1.value.trim() !== '#000000') {
+          options.colorLight = backgroundcolor1.value;
+        } else if (backgroundcolor2.value.trim() !== '#000000') {
+          options.colorLight = backgroundcolor2.value;
+        } else if (backgroundcolor3.value.trim() !== '#000000') {
+          options.colorLight = backgroundcolor3.value;
+        } else {
+          options.colorLight = '#ffffff';
+        }
 
-    $("#createBtn").on("click", function () {
+
+        var eyecolor1 = document.getElementById('eyecolor1');
+        var eyecolor2 = document.getElementById('eyecolor2');
+        var eyecolor3 = document.getElementById('eyecolor3');
+        console.log(eyecolor1.value)
+        if (eyecolor1.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor1.value;
+          } else if (eyecolor2.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor2.value;
+          } else if (eyecolor3.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor3.value;
+          } else {
+            options.eyeColorDark = '#0000ff';
+          }
+
+
+
+      
+        var logoImageInput = document.getElementById('image1');
+      
+        if (logoImageInput.files && logoImageInput.files[0]) {
+          options.logo = logoImageInput.files[0];
+          options.logoWidth = 50;
+          options.logoHeight = 50; 
+        } else {
+          options.logo = null;
+          options.logoWidth = 0;
+          options.logoHeight = 0;
+        }
+      
+        var qrcodeElement = document.getElementById('qrcode');
+        qrcodeElement.innerHTML = ''; // Clear existing content
+      
+        qrcode = new QRCode(qrcodeElement, options);
+      
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        canvas.width = options.width;
+        canvas.height = options.height;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(qrcodeElement.firstChild, 0, 0);
+      
+        if (logoImageInput.files && logoImageInput.files[0]) {
+          var existingLogoImage = document.querySelector('.logo');
+          if (existingLogoImage) {
+            existingLogoImage.remove();
+          }
+      
+          var logoImage = document.createElement('img');
+          logoImage.src = URL.createObjectURL(logoImageInput.files[0]);
+          logoImage.className = 'logo';
+          logoImage.style.width = '20px';
+          logoImage.style.height = '20px';
+          qrcodeElement.appendChild(logoImage);
+        }
+      }
+      
+      document.getElementById('createBtn').addEventListener('click', function() {
         generateQRCode();
-    });
+      });
+      
 
 
 
 
+      
     $('.link').on('click', function () {
         var content = $(this).text();
         var convertedText = content.toLowerCase();
