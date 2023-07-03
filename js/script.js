@@ -138,8 +138,70 @@ $(document).ready(function () {
         // }
 
         var textInput = document.getElementById('text');
+
         var urlInput = document.getElementById('url');
-        var text = textInput.value || urlInput.value;
+
+        var contactInputs = document.getElementsByClassName('contactInfo');
+        var contactInputstexts = ''; 
+        for (var i = 0; i < contactInputs.length; i++) {
+            var inputValue = contactInputs[i].value;
+            console.log("inputValue", inputValue);
+            if (inputValue !== '') {
+                contactInputstexts += inputValue+','; 
+            }
+        }
+
+        var wifiInputs = document.getElementsByClassName('wifiInfo');
+        var wifiInputstexts = ''; 
+        for (var i = 0; i < wifiInputs.length; i++) {
+            var inputValue = wifiInputs[i].value;
+            console.log("inputValue", inputValue);
+            if (inputValue !== '') {
+                wifiInputstexts += inputValue+','; 
+            }
+        }
+
+        
+        var locationInputs = document.getElementsByClassName('locationInfo');
+        var locationInputstexts = ''; 
+        for (var i = 0; i < locationInputs.length; i++) {
+            var inputValue = locationInputs[i].value;
+            console.log("inputValue", inputValue);
+            if (inputValue !== '') {
+                locationInputstexts += inputValue+','; 
+            }
+        }
+
+        var calendarInputs = document.getElementsByClassName('calendarInfo');
+        var calendarInputstexts = ''; 
+        for (var i = 0; i < calendarInputs.length; i++) {
+            var inputValue = calendarInputs[i].value;
+            console.log("inputValue", inputValue);
+            if (inputValue !== '') {
+                calendarInputstexts += inputValue+','; 
+            }
+        }
+
+
+        // var text = textInput.value || urlInput.value;
+        // for (var i = 0; i < contactInputs.length; i++) {
+        //   var inputValue = contactInputs[i].value;
+        //   console.log("inputValue", inputValue);
+
+        //   if (inputValue !== '') {
+        //     text += inputValue;
+        //   }
+        // }
+
+        // console.log("text", text);
+
+
+
+        var text = textInput.value || urlInput.value || contactInputstexts || wifiInputstexts  || locationInputstexts || calendarInputstexts;
+
+
+
+
         options.text = text;
         if (!text) {
             return;
@@ -148,6 +210,11 @@ $(document).ready(function () {
         var color1 = document.getElementById('color1');
         var color2 = document.getElementById('color2');
         var color3 = document.getElementById('color3');
+        var color4 = document.getElementById('color4');
+        var color5 = document.getElementById('color5');
+        var color6 = document.getElementById('color6');
+
+
 
         if (color1.value.trim() !== '#000000') {
             options.colorDark = color1.value;
@@ -155,13 +222,26 @@ $(document).ready(function () {
             options.colorDark = color2.value;
         } else if (color3.value.trim() !== '#000000') {
             options.colorDark = color3.value;
-        } else {
+        }
+        else if (color4.value.trim() !== '#000000') {
+            options.colorDark = color4.value;
+        }
+        else if (color5.value.trim() !== '#000000') {
+            options.colorDark = color5.value;
+        }
+        else if (color6.value.trim() !== '#000000') {
+            options.colorDark = color6.value;
+        }else {
             options.colorDark = '#000000';
         }
 
         var backgroundcolor1 = document.getElementById('backgroundcolor1');
         var backgroundcolor2 = document.getElementById('backgroundcolor2');
         var backgroundcolor3 = document.getElementById('backgroundcolor3');
+        var backgroundcolor4 = document.getElementById('backgroundcolor4');
+        var backgroundcolor5 = document.getElementById('backgroundcolor5');
+        var backgroundcolor6 = document.getElementById('backgroundcolor6');
+
 
         if (backgroundcolor1.value.trim() !== '#000000') {
             options.colorLight = backgroundcolor1.value;
@@ -169,6 +249,13 @@ $(document).ready(function () {
             options.colorLight = backgroundcolor2.value;
         } else if (backgroundcolor3.value.trim() !== '#000000') {
             options.colorLight = backgroundcolor3.value;
+        }
+        else if (backgroundcolor4.value.trim() !== '#000000') {
+            options.colorLight = backgroundcolor4.value;
+        }else if (backgroundcolor5.value.trim() !== '#000000') {
+            options.colorLight = backgroundcolor5.value;
+        }else if (backgroundcolor6.value.trim() !== '#000000') {
+            options.colorLight = backgroundcolor6.value;
         } else {
             options.colorLight = '#ffffff';
         }
@@ -177,6 +264,10 @@ $(document).ready(function () {
         var eyecolor1 = document.getElementById('eyecolor1');
         var eyecolor2 = document.getElementById('eyecolor2');
         var eyecolor3 = document.getElementById('eyecolor3');
+        var eyecolor4 = document.getElementById('eyecolor4');
+        var eyecolor5 = document.getElementById('eyecolor5');
+        var eyecolor6 = document.getElementById('eyecolor6');
+
         console.log(eyecolor1.value)
         if (eyecolor1.value.trim() !== '#000000') {
             options.eyeColorDark = eyecolor1.value;
@@ -184,6 +275,13 @@ $(document).ready(function () {
             options.eyeColorDark = eyecolor2.value;
         } else if (eyecolor3.value.trim() !== '#000000') {
             options.eyeColorDark = eyecolor3.value;
+        }
+        else if (eyecolor4.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor4.value;
+        }else if (eyecolor5.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor5.value;
+        }else if (eyecolor6.value.trim() !== '#000000') {
+            options.eyeColorDark = eyecolor6.value;
         } else {
             options.eyeColorDark = '#0000ff';
         }
@@ -194,6 +292,10 @@ $(document).ready(function () {
         var logoImageInput1 = document.getElementById('image1');
         var logoImageInput2 = document.getElementById('image2');
         var logoImageInput3 = document.getElementById('image3');
+        var logoImageInput4 = document.getElementById('image4');
+        var logoImageInput5 = document.getElementById('image5');
+        var logoImageInput6 = document.getElementById('image6');
+
 
 
         if (logoImageInput1.files && logoImageInput1.files[0]) {
@@ -208,6 +310,21 @@ $(document).ready(function () {
         }
         else if (logoImageInput3.files && logoImageInput3.files[0]) {
             options.logo = logoImageInput3.files[0];
+            options.logoWidth = 50;
+            options.logoHeight = 50;
+        }
+        else if (logoImageInput4.files && logoImageInput4.files[0]) {
+            options.logo = logoImageInput4.files[0];
+            options.logoWidth = 50;
+            options.logoHeight = 50;
+        }
+        else if (logoImageInput5.files && logoImageInput5.files[0]) {
+            options.logo = logoImageInput5.files[0];
+            options.logoWidth = 50;
+            options.logoHeight = 50;
+        }
+        else if (logoImageInput6.files && logoImageInput6.files[0]) {
+            options.logo = logoImageInput6.files[0];
             options.logoWidth = 50;
             options.logoHeight = 50;
         }
@@ -268,6 +385,45 @@ $(document).ready(function () {
             logoImage.style.height = '20px';
             qrcodeElement.appendChild(logoImage);
         }
+        else if (logoImageInput4.files && logoImageInput4.files[0]) {
+            var existingLogoImage = document.querySelector('.logo');
+            if (existingLogoImage) {
+                existingLogoImage.remove();
+            }
+
+            var logoImage = document.createElement('img');
+            logoImage.src = URL.createObjectURL(logoImageInput4.files[0]);
+            logoImage.className = 'logo';
+            logoImage.style.width = '20px';
+            logoImage.style.height = '20px';
+            qrcodeElement.appendChild(logoImage);
+        }
+        else if (logoImageInput5.files && logoImageInput5.files[0]) {
+            var existingLogoImage = document.querySelector('.logo');
+            if (existingLogoImage) {
+                existingLogoImage.remove();
+            }
+
+            var logoImage = document.createElement('img');
+            logoImage.src = URL.createObjectURL(logoImageInput5.files[0]);
+            logoImage.className = 'logo';
+            logoImage.style.width = '20px';
+            logoImage.style.height = '20px';
+            qrcodeElement.appendChild(logoImage);
+        }
+        else if (logoImageInput6.files && logoImageInput6.files[0]) {
+            var existingLogoImage = document.querySelector('.logo');
+            if (existingLogoImage) {
+                existingLogoImage.remove();
+            }
+
+            var logoImage = document.createElement('img');
+            logoImage.src = URL.createObjectURL(logoImageInput6.files[0]);
+            logoImage.className = 'logo';
+            logoImage.style.width = '20px';
+            logoImage.style.height = '20px';
+            qrcodeElement.appendChild(logoImage);
+        }
     }
 
     document.getElementById('createBtn').addEventListener('click', function () {
@@ -286,7 +442,6 @@ $(document).ready(function () {
         $('.left-side').not(targetDiv).hide();
         targetDiv.show();
 
-        // Clear data values of not(targetDiv)
         $('.left-side').not(targetDiv).find('input').val('');
     });
 
@@ -464,16 +619,12 @@ $(document).ready(function () {
 
         var link = document.createElement("a");
         link.href = qrCodeImgSrc;
-        link.download = "qrcode.png"; // Set the download file name
-        // Append the link to the document body
+        link.download = "qrcode.png";
         document.body.appendChild(link);
-        // Trigger the link click to start the download
         link.click();
-        // Remove the link from the document body
         document.body.removeChild(link);
     }
 
-    // Attach click event handler to the download button
     $("#downloadBtn").on("click", function () {
         downloadQRCode();
     });
