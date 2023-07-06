@@ -143,10 +143,12 @@ body {
 }
 
 .menu li a:hover {
-    /* background-color: #004D40; */
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: white;
+    cursor: pointer;
 }
+
+
 
 .submenu li a {
     display: block;
@@ -154,7 +156,25 @@ body {
 }
 
 
+.selected {
+    position: relative;
+    display: inline-block;
+    color:#FFFFFF !important;
 
+  }
+  
+.selected::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Adjust the value as needed */
+    left: 0;
+    width: 100%;
+    height: 1px; /* Adjust the value as needed */
+    background-color:#FFFFFF;
+    /* color:#FFFFFF; */
+}
+  
+  
 
 
 
@@ -187,7 +207,7 @@ body {
 }
 
 .right-side {
-    width: 25%;
+    /* width: 25%; */
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -198,13 +218,13 @@ body {
     text-align: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 
 }
 
 .right-side .divWithButtons {
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .qrcode {
@@ -244,6 +264,7 @@ input {
 }
 
 
+  
 
 
 
@@ -286,6 +307,17 @@ span img {
 
 }
 
+span i {
+    width: 20px;
+    height: 20px;
+    color:#4C635E;
+}
+.fa-plus {
+    color:#999999;
+    font-size: 12px; /* Adjust the font size as needed */
+    width: 35px; 
+}
+
 
 .enterContent h5 {
     flex-grow: 1;
@@ -312,9 +344,11 @@ input[type=password],input[type=url] {
 
 
 .divWithButtons {
+    width:100%;
     padding-top: 5px;
     padding-bottom: 20px;
     text-align: left;
+    align-self: center;
     padding-left: 10px;
 }
 
@@ -322,8 +356,8 @@ input[type=password],input[type=url] {
 .range {
     -webkit-appearance: none;
     appearance: none;
-    width: 62%;
-    height: 8px;
+    width: 82%;
+    height: 5px;
     border-radius: 5px;
     background-color: #CFE8E1;
     outline: none;
@@ -389,6 +423,7 @@ input[type=password],input[type=url] {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    margin-right: 10px;;
 }
 
 #createBtn {
@@ -429,26 +464,19 @@ input[type=password],input[type=url] {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    width: 80%;
+    width: 50%;
 }
 
-.colorDiv input {
-    flex-basis: calc(50% - 10px);
+
+.colorDiv input:nth-child(1),
+/* .colorDiv input:nth-child(2),
+.colorDiv input:nth-child(3), */
+.colorDiv input:nth-child(4),
+.colorDiv input:nth-child(5) {
+    flex-basis: calc(50% - 20%);
     margin-top: 15px;
     margin-right: 2px;
     margin-left: 2px;
-}
-
-.colorDiv input:nth-child(2),
-.colorDiv input:nth-child(3),
-.colorDiv input:nth-child(4),
-.colorDiv input:nth-child(5) {
-    flex-basis: calc(50% - 10px);
-}
-
-.colorDiv input.color {
-    flex-basis: calc(100% - 10px);
-    margin-right: 0;
 }
 
 
@@ -503,7 +531,7 @@ input[type=password],input[type=url] {
 .footerContentBox {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 70%;
     margin: 0 auto;
     padding-top: 3rem;
@@ -524,18 +552,31 @@ input[type=password],input[type=url] {
     margin-top: .3rem;
 }
 
-.footerContentBox .infoLinkBox p:first-child {
-    margin-top: 0;
-}
-
 .footerContentBox .infoLinkBox p {
     margin-top: .5rem;
     cursor: pointer;
 }
+.infoLinkBox p:first-child {
+  font-weight: 600;
+}
+  
 
 .footerContentBox .infoLinkBox p span:hover {
     border-bottom: .1rem solid black;
 }
+
+
+.infoFlex{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap:8px;
+}
+.infoFlex span{
+    font-weight: 600;
+
+}
+
 
 
 
@@ -622,7 +663,7 @@ input[type=password],input[type=url] {
     }
 
     .container button {
-        padding: 13px;
+        /* padding: 13px; */
         font-size: 16px;
     }
 
@@ -684,16 +725,6 @@ input[type=password],input[type=url] {
 
 
 
-
-
-
-
-
-
-
-
-
-
     .menu {
         display: none;
     }
@@ -734,14 +765,6 @@ input[type=password],input[type=url] {
         padding: 0;
         color: #99C9C4;
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -818,15 +841,6 @@ input[type=password],input[type=url] {
 
 
 
-
-
-
-
-
-
-
-
-
     .menu-btn {
         display: inline-block;
         cursor: pointer;
@@ -875,14 +889,6 @@ input[type=password],input[type=url] {
 
 
 
-
-
-
-
-
-
-
-
     .container {
         flex-direction: column;
         align-items: center;
@@ -897,12 +903,6 @@ input[type=password],input[type=url] {
         order: 1;
         width: 100%;
     }
-
-
-
-
-
-
 
 
 
@@ -962,6 +962,7 @@ input[type=password],input[type=url] {
         padding-bottom: 20px;
     }
 
+      
 
 
 
@@ -989,5 +990,57 @@ input[type=password],input[type=url] {
         margin-right: 0px;
     }
 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 660px) {
+
+
+.colorDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.singlecolor {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; */
+    /* height: 10%; */
+    /* padding-right:55px; */
+}
+
+.colorDiv input {
+    flex-basis: calc(50% - 10px);
+    margin-top: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.colorDiv input:nth-child(2),
+.colorDiv input:nth-child(3),
+.colorDiv input:nth-child(4),
+.colorDiv input:nth-child(5) {
+    flex-basis: calc(50% - 10px);
+}
+
+.colorDiv input.color {
+    flex-basis: calc(100% - 10px);
+    margin-right: 0;
+}
 
 }

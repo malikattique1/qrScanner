@@ -82,6 +82,16 @@ $(document).ready(function () {
 
 
 
+    function handleRangeChange() {
+        var rangeValue = parseInt(rangeInput.value);
+        options.width = rangeValue;
+        options.height = rangeValue;
+        generateQRCode();
+      }
+      
+    var rangeInput = document.getElementById('range');
+    rangeInput.addEventListener('input', handleRangeChange);
+
 
 
 
@@ -89,25 +99,27 @@ $(document).ready(function () {
 
 
     var options = {
-        text: 'Sample Text',
-        width: 200,
-        height: 200,
+        text: ' ',
+        width: 300,
+        height: 300,
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.H,
-        logo: null,
-        logoWidth: 0,
-        logoHeight: 0,
+        // logo: null,
+        logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhs0k91D_L-fOJHyofE_jKGGBQBQ70bzd_ow&usqp=CAU',
+        logoWidth: 20,
+        logoHeight: 20,
         logoBackgroundColor: '#ffffff',
         eyeColorDark: '#0000ff',
         eyeColorLight: '#ff0000',
     };
 
-    var qrcode = new QRCode('qrcode', options); // Create the QR code immediately
+    var qrcode = new QRCode('qrcode', options);
 
     document.addEventListener('DOMContentLoaded', function () {
-        qrcode.clear(); // Clear the existing QR code
-        qrcode.makeCode(options.text); // Generate the QR code with the default text
+
+        qrcode.clear(); 
+        qrcode.makeCode(options.text); 
     });
 
 
@@ -115,10 +127,18 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
     var options = {
         text: 'Sample Text',
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.H,
@@ -129,13 +149,24 @@ $(document).ready(function () {
         eyeColorDark: '#0000ff',
         eyeColorLight: '#ff0000',
     };
-    var qrcode = null; // Keep track of the current QR code
+    var qrcode = null; 
 
     function generateQRCode() {
 
         // if (qrcode) {
         //   qrcode.clear(); // Clear the existing QR code
         // }
+
+
+
+    
+        var rangeValue = parseInt(rangeInput.value);
+        options.width = rangeValue;
+        options.height = rangeValue;
+
+
+
+
 
         var textInput = document.getElementById('text');
 
@@ -147,7 +178,7 @@ $(document).ready(function () {
             var inputValue = contactInputs[i].value;
             console.log("inputValue", inputValue);
             if (inputValue !== '') {
-                contactInputstexts += inputValue+','; 
+                contactInputstexts += inputValue+'\n'; 
             }
         }
 
@@ -157,7 +188,7 @@ $(document).ready(function () {
             var inputValue = wifiInputs[i].value;
             console.log("inputValue", inputValue);
             if (inputValue !== '') {
-                wifiInputstexts += inputValue+','; 
+                wifiInputstexts += inputValue+'\n'; 
             }
         }
 
@@ -168,7 +199,7 @@ $(document).ready(function () {
             var inputValue = locationInputs[i].value;
             console.log("inputValue", inputValue);
             if (inputValue !== '') {
-                locationInputstexts += inputValue+','; 
+                locationInputstexts += inputValue+'\n'; 
             }
         }
 
@@ -178,24 +209,12 @@ $(document).ready(function () {
             var inputValue = calendarInputs[i].value;
             console.log("inputValue", inputValue);
             if (inputValue !== '') {
-                calendarInputstexts += inputValue+','; 
+                calendarInputstexts += inputValue+'\n'; 
             }
         }
 
 
-        // var text = textInput.value || urlInput.value;
-        // for (var i = 0; i < contactInputs.length; i++) {
-        //   var inputValue = contactInputs[i].value;
-        //   console.log("inputValue", inputValue);
-
-        //   if (inputValue !== '') {
-        //     text += inputValue;
-        //   }
-        // }
-
-        // console.log("text", text);
-
-
+    
 
         var text = textInput.value || urlInput.value || contactInputstexts || wifiInputstexts  || locationInputstexts || calendarInputstexts;
 
@@ -445,6 +464,21 @@ $(document).ready(function () {
         $('.left-side').not(targetDiv).find('input').val('');
     });
 
+    $('.link').on('click', function () {
+        var content = $(this).text();
+        var convertedText = content.toLowerCase();
+        var targetDiv = $('#' + convertedText);
+        $('.left-side').not(targetDiv).hide();
+        targetDiv.show();
+      
+        $('.left-side').not(targetDiv).find('input').val('');
+        // Remove underline from previously selected link
+        $('.link').removeClass('selected');
+        // Add underline to the clicked link
+        $(this).addClass('selected');
+      });
+      
+
 
 
 
@@ -574,7 +608,7 @@ $(document).ready(function () {
     $('.gradientcolor, .gradientcolor, .eyecolor,.eyecolorlabel, .eyecolor input').hide();
 
     // Event handler for colorType radio buttons
-    $('input[name="colorType1"],input[name="colorType2"],input[name="colorType3"],input[name="colorType4"],input[name="colorType5"]').on('change', function () {
+    $('input[name="colorType1"],input[name="colorType2"],input[name="colorType3"],input[name="colorType4"],input[name="colorType5"],input[name="colorType6"]').on('change', function () {
         if ($(this).attr('id') === 'singleColor') {
             $('.singlecolor, .backgroundcolor').show();
             $('.gradientcolor, .eyecolor,.eyecolorlabel, .eyecolor input').hide();
@@ -628,6 +662,12 @@ $(document).ready(function () {
     $("#downloadBtn").on("click", function () {
         downloadQRCode();
     });
+
+
+
+
+
+
 
 
 

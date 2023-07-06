@@ -164,7 +164,7 @@
 
         <div class="left-side" id="website" style="display:none;">
             <div class="enterContent" id="enterWebsite">
-                <span><img id="from" src="img/copy.png"></img></span>
+                <span><i id="from" class="fas fa-globe"></i></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
@@ -240,7 +240,7 @@
 
         <div class="left-side" id="contact" style="display:none;">
             <div class="enterContent" id="enterContact">
-                <span><img id="from" src="img/copy.png"></img></span>
+                <span><i id="from" class="fas fa-globe"></i></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
@@ -357,7 +357,7 @@
 
         <div class="left-side" id="wifi" style="display:none;">
             <div class="enterContent" id="enterWifi">
-                <span><img id="from" src="img/copy.png"></img></span>
+                <span><i id="from" class="fas fa-wifi"></i></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
@@ -448,7 +448,7 @@
 
         <div class="left-side" id="location" style="display:none;">
             <div class="enterContent" id="enterLocation">
-                <span><img id="from" src="img/copy.png"></img></span>
+                <span><i id="from" class="fas fa-location-arrow"></i></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
@@ -538,7 +538,7 @@
 
         <div class="left-side" id="calendar" style="display:none;">
             <div class="enterContent" id="enterCalendar">
-                <span><img id="from" src="img/copy.png"></img></span>
+                <span><i id="from" class="fas fa-globe"></i></span>
                 <h5>Enter Content</h5>
                 <i id="from" class="fas fa-plus"></i>
             </div>
@@ -588,7 +588,7 @@
                 <h5>Foreground Color</h5>
                 <div class="colorDiv">
                     <label for="singleColor">
-                        <input id="singleColor" class="singleColor" type="radio" name="colorType6"> Single color
+                        <input id="singleColor" class="singleColor" type="radio" name="colorType6" > Single color
                     </label>
                     <label for="gradientcolor">
                         <input id="gradientColor" class="gradientColor" type="radio" name="colorType6"> Gradient
@@ -596,14 +596,16 @@
                     <label for="customEyeColor">
                         <input id="customEyeColor" class="customEyeColor" type="checkbox"> Custom Eye Color
                     </label>
-                    <input id="color6" class="singlecolor" type="color" value="">
+                    <input id="color6" class="singlecolor" type="color" value="" >
                     <input id="gradientcolor" class="gradientcolor" type="color" value="">
 
                 </div>
                 <h5 id="eyecolorlabel" class="eyecolorlabel">Eye Color</h5>
                 <div class="colorDiv">
+                    <div id="eyecolor66" class="eyecolor" type="text" value="343f" style="width:90px; height:30px; background-color: white;">
                     <input id="eyecolor6" class="eyecolor" type="color" value="">
-                   
+                    <!-- <input > -->
+                    </div>
                 </div>
                 <h5>Background Color</h5>
                 <div class="colorDiv">
@@ -646,29 +648,29 @@
         <div class="right-side">
             <div id="qrcode" class="qrcode"></div>
             <!-- <canvas id="qrcode" class="qrcode"></canvas> -->
-            <input type="range" class="range" min="1" max="100" value="50" step="1">
+            <input type="range" id="range" class="range" min="50" max="200" value="200" step="10">
             <div class="range-labels">
                 <span class="low-quality">Low Quality</span>
                 <span class="px">200X200px</span>
                 <span class="high-quality">High Quality</span>
             </div>
             <div class="divWithButtons">
-                <button type="submit" id="createBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                <button type="submit" id="createBtn" class="submit-btn">
                     Create QR Code
                 </button>
-                <button type="submit" id="downloadBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
+                <button type="submit" id="downloadBtn" class="submit-btn">
                     Download PNG
                 </button>
             </div>
             <div class="divWithButtons">
-                <button type="submit" id="svgBtn" class="submit-btn"> <i id="from" class="fas fa-history"></i>
+                <button type="submit" id="svgBtn" class="submit-btn">
                     .SVG
                 </button>
-                <button type="submit" id="pdfBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
-                    .PDF
+                <button type="submit" id="pdfBtn" class="submit-btn">
+                    .PDF<sup>*</sup>
                 </button>
-                <button type="submit" id="epsBtn" class="submit-btn"> <i id="from" class="fas fa-star"></i>
-                    .EPS
+                <button type="submit" id="epsBtn" class="submit-btn">
+                    .EPS<sup>*</sup>
                 </button><br>
                 <br>
                 <h6 class="note">*no support for gradient colors</h6>
@@ -684,32 +686,31 @@
     <section class="footerContent" id="footerContent">
         <div class="footerContentBox" id="footerContentBox">
             <div class="infoLinkBox">
+                <div class="infoFlex">
                 <img src='img/qrlogo.png' alt="QR Code Scanner" />
-                <h3>QR Code Scanner</h3>
+                <span>QR Code Scanner</span>
+                </div>
+                <span class="infoText">Create your own codes & boost your idea’s</span>
             </div>
             <div class="infoLinkBox">
-                <p><span>Resources</span></p>
-                <p><span>Data Security</span></p>
-                <p><span>Privacy Policy</span></p>
-                <p><span>Terms & Conditions</span></p>
+                <p><span>SERVICE</span></p>
+                <p><span>create QR Codes</span></p>
             </div>
             <div class="infoLinkBox">
-                <p><span>Resources</span></p>
-                <p><span>Data Security</span></p>
+                <p><span>COMPANY</span></p>
+                <p><span>Terms of use</span></p>
                 <p><span>Privacy Policy</span></p>
-                <p><span>Terms & Conditions</span></p>
+                <p><span>Cookies</span></p>
             </div>
             <div class="infoLinkBox">
-                <p><span>Resources</span></p>
-                <p><span>Data Security</span></p>
-                <p><span>Privacy Policy</span></p>
-                <p><span>Terms & Conditions</span></p>
+                <p><span>HELP</span></p>
+                <p><span>Contact us</span></p>
             </div>
         </div>
     </section>
     <section class="underfooterContent" id="underfooterContent" style="border-top:1px solid #999999;">
         <div class="underfooterContentBox" id="underfooterContentBox">
-            <p><span>@2023 Copyright:QR Code Scanner</span></p>
+            <p><span>@2023 Copyright:<b> QR Code Scanner</b></span></p>
         </div>
     </section>
 
